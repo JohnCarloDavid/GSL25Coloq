@@ -231,7 +231,35 @@ body {
 }
 
 /* Responsive Styles */
+/* Hide sidebar on tablets and smaller */
 @media (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #2c3e50; /* Change to your sidebar color */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #2c3e50;
+        cursor: pointer;
+        margin: 10px;
+        z-index: 1000;
+    }
+
     .mainContent {
         margin-left: 0;
         width: 100%;
