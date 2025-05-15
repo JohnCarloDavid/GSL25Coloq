@@ -121,7 +121,6 @@ body {
     background-color: #f9f9f9;
     transition: background-color 0.3s ease;
 }
-
 /* Sidebar styling */
 .sidebar {
             width: 260px;
@@ -202,8 +201,38 @@ body {
 
 /* Tablets & iPads (max-width: 1024px) */
 @media (max-width: 1024px) {
+    /* Sidebar styles */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: #2c3e50; /* Customize as needed */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #2c3e50;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
     .mainContent {
-        margin-left: 0; /* Remove sidebar margin */
+        margin-left: 0;
         padding: 20px;
         width: 100%;
     }
@@ -216,7 +245,7 @@ body {
     }
 
     .totalsSection div {
-        flex: 1 1 45%; /* Make totals half-width on larger tablets */
+        flex: 1 1 45%;
         text-align: center;
     }
 
@@ -241,13 +270,14 @@ body {
         padding: 10px 15px;
     }
 
-    .searchSection input, 
-    .searchSection select, 
+    .searchSection input,
+    .searchSection select,
     .searchSection button {
         font-size: 1rem;
         padding: 12px;
     }
 }
+
 
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
